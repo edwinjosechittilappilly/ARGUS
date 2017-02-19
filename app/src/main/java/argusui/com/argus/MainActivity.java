@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,13 +54,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 nrst(1);
                 f[1]++;
+                String toSpeak = b1.getText().toString();
                 if (f[1] == 1) {
                     //stt
-                    String toSpeak = b1.getText().toString();
+
                     t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[1] == 2) {
                     f[1] = 0;
+                    t1.speak(" opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //fuction  to be done
                     Intent i = new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://www.google.com"));
