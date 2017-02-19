@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //
         //resetting values
+
         for (int i = 0; i < f.length; i++) {
             f[i] = 0;
         }
@@ -44,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        //
 
         //button 1
         b1 = (Button) findViewById(R.id.button);
@@ -80,14 +79,16 @@ public class MainActivity extends AppCompatActivity {
                 //
                 nrst(2);
                 f[2]++;
+                String toSpeak = b2.getText().toString();
                 if (f[2] == 1) {
                     //stt
-                    String toSpeak = b2.getText().toString();
+
                     t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[2] == 2) {
                     f[2] = 0;
                     //fuction  to be done
+                    t1.speak(" Opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent(Intent.ACTION_DIAL);
                     startActivity(i);
                 }
@@ -101,14 +102,15 @@ public class MainActivity extends AppCompatActivity {
                 //
                 nrst(3);
                 f[3]++;
+                String toSpeak = b3.getText().toString();
                 if (f[3] == 1) {
                     //stt
-                    String toSpeak = b3.getText().toString();
                     t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[3] == 2) {
                     f[3] = 0;
                     //fuction  to be done
+                    t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     Intent read1 = new Intent();
                     read1.setAction(android.content.Intent.ACTION_VIEW);
                     read1.setData(ContactsContract.Contacts.CONTENT_URI);
@@ -128,14 +130,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 nrst(4);
                 f[4]++;
+                String toSpeak = b4.getText().toString();
                 if (f[4] == 1) {
                     //stt
-                    String toSpeak = b4.getText().toString();
+
                     t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[4] == 2) {
                     f[4] = 0;
                     //fuction  to be done
+                    t1.speak(" Activating " + toSpeak + " commands ", TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent(Intent.ACTION_VOICE_COMMAND);
                     startActivity(i);
                 }
@@ -150,14 +154,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 nrst(5);
                 f[5]++;
+                String toSpeak = b5.getText().toString();
                 if (f[5] == 1) {
                     //stt
-                    String toSpeak = b5.getText().toString();
+
                     t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[5] == 2) {
                     f[5] = 0;
                     //fuction  to be done
+                    t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent("android.media.action.IMAGE_CAPTURE");
                     startActivity(i);
                 }
