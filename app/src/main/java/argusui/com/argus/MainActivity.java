@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     //
                 } else if (f[1] == 2) {
                     f[1] = 0;
-                    t1.speak(" opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak("opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     //fuction  to be done
                     Intent i = new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://www.google.com"));
