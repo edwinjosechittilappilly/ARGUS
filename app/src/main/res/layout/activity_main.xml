@@ -10,78 +10,75 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="myapplication.tutorialspoint7.example.com.test.MainActivity">
 
+    <TextClock
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:layout_width="wrap_content" />
+
+    <Button
+        android:text="Gesture Pad"
+        android:layout_height="600dp"
+        android:id="@+id/button6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="80dp" />
+
     <Button
         android:text="call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_width="80dp"
         android:id="@+id/button2"
-        android:layout_gravity="center"
-        android:layout_below="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_height="690dp"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/button3" />
 
     <TextView
         android:text="Home Screen "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="18dp"
         android:id="@+id/textView2"
-        android:layout_alignParentEnd="true"
         android:typeface="normal"
         android:textSize="18sp"
         android:textStyle="normal|bold|italic"
         android:textAlignment="center"
-        android:textAllCaps="true" />
-
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp" />
-
-    <Button
-        android:text="google.com"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_marginTop="24dp"
-        android:layout_gravity="center"
-        android:layout_alignTop="@+id/textClock"
-        android:layout_centerHorizontal="true" />
+        android:textAllCaps="true"
+        android:layout_below="@+id/textClock"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:text="camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
         android:id="@+id/button5"
+        android:layout_height="100dp"
         android:layout_below="@+id/button4"
-        android:layout_marginTop="28dp"
-        android:layout_alignStart="@+id/button4"
-        android:layout_alignEnd="@+id/button4" />
+        android:layout_toEndOf="@+id/button6" />
+
+    <Button
+        android:text="google.com"
+        android:id="@+id/button"
+        android:layout_width="225dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/button5"
+        android:layout_toEndOf="@+id/button6" />
 
     <Button
         android:text="Voice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
+        android:layout_width="225dp"
         android:id="@+id/button4"
-        android:layout_below="@+id/button3"
-        android:layout_alignStart="@+id/button3"
-        android:layout_alignEnd="@+id/button3" />
+        android:layout_height="100dp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/button6" />
 
     <Button
-        android:text="contacts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:layout_height="100dp"
         android:id="@+id/button3"
-        android:layout_gravity="center"
-        android:layout_below="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:layout_marginTop="16dp"
-        android:layout_alignEnd="@+id/button2" />
+        android:layout_width="225dp"
+        android:layout_below="@+id/button"
+        android:layout_toEndOf="@+id/button6" />
 
 </RelativeLayout>
