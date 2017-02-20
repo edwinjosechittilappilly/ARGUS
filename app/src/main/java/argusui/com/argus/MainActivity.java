@@ -8,11 +8,13 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     Button b1, b2, b3, b4, b5;
+    TextView bt;
     int f1, f2, f3, f4, f5;
     TextToSpeech t1;
     int f[] = new int[10];
@@ -45,7 +47,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        //home screen talking
+        bt = (TextView) findViewById(R.id.textView2);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //home screen stt
+                String toSpeak = bt.getText().toString();
+                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
 
+        //
         //button 1
         b1 = (Button) findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener() {
