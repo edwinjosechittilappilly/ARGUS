@@ -2,61 +2,71 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:layout_centerVertical="true"
     android:columnCount="6"
     android:orientation="horizontal" >
 
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="6"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/dphoneno"
+        android:layout_width="320dp" />
+
     <Button
-        android:text="1"
+        android:text="           1           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond1"/>
     <Button
-        android:text="2"
+        android:text="           2           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond2"/>
     <Button
-        android:text="3"
+        android:text="           3           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond3"/>
     <Button
-        android:text="4"
+        android:text="           4           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond4"/>
     <Button
-        android:text="5"
+        android:text="           5           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond5"/>
     <Button
-        android:text="6"
+        android:text="           6           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond6"/>
     <Button
-        android:text="7"
+        android:text="           7           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond7"/>
     <Button
-        android:text="8"
+        android:text="           8           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond8"/>
     <Button
-        android:text="9"
+        android:text="           9           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond9"/>
     <Button
-        android:text="*"
+        android:text="           *           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttonds"/>
     <Button
-        android:text="0"
+        android:text="           0           "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
         android:id="@+id/buttond0"/>
@@ -66,16 +76,17 @@
         android:layout_gravity="fill"
         android:id="@+id/buttondh"/>
     <Button
-        android:text="Call"
+        android:text="           Call                  "
         android:layout_columnSpan="3"
         android:layout_gravity="left"
         android:id="@+id/buttondcall"
         android:minWidth="130dp" />
     <Button
-        android:text="Delete"
+        android:text="              Delete           "
         android:layout_columnSpan="3"
         android:layout_gravity="right"
         android:id="@+id/buttondback"
         android:minWidth="140dp" />
+
 
 </GridLayout>
