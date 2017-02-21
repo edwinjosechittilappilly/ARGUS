@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ARGUS</string>
+
+    <string name="main_label">Contacts</string>
 </resources>
