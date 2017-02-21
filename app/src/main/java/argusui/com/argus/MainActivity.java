@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     f[2] = 0;
                     //fuction  to be done
                     t1.speak(" Opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
-                    Intent i = new Intent(Intent.ACTION_DIAL);
+                    Intent i = new Intent(getApplicationContext(),DialPad.class);
                     startActivity(i);
                 }
             }

@@ -5,15 +5,14 @@
     android:layout_centerVertical="true"
     android:columnCount="6"
     android:orientation="horizontal" >
+    <TextView
 
-
-    <EditText
-        android:layout_height="wrap_content"
+        android:layout_height="29dp"
         android:layout_columnSpan="6"
-        android:inputType="phone"
         android:ems="10"
         android:id="@+id/dphoneno"
         android:layout_width="320dp" />
+
 
     <Button
         android:text="           1           "
@@ -87,6 +86,8 @@
         android:layout_gravity="right"
         android:id="@+id/buttondback"
         android:minWidth="140dp" />
+
+
 
 
 </GridLayout>

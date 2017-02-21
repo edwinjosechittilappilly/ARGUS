@@ -18,6 +18,18 @@
         <activity
             android:name=".GesturePad"
             android:label=".GesturePad">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".DialPad"
+            android:label=".DialPad">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>
