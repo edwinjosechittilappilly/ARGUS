@@ -17,7 +17,7 @@
         </activity>
         <activity
             android:name=".GesturePad"
-            android:label=".GesturePad">
+            android:label=".GesturePad ">
 
         </activity>
     </application>
