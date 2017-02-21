@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    Button b1, b2, b3, b4, b5;
+    Button b1, b2, b3, b4, b5,b6;
     TextView bt;
     int f1, f2, f3, f4, f5;
     TextToSpeech t1;
@@ -178,6 +178,33 @@ public class MainActivity extends AppCompatActivity {
                     //fuction  to be done
                     t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent("android.media.action.IMAGE_CAPTURE");
+                    startActivity(i);
+                }
+
+
+                //
+
+            }
+        });
+        //getsture
+        b6=(Button)findViewById(R.id.button6);
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nrst(6);
+                f[6]++;
+                String toSpeak = b6.getText().toString();
+                if (f[6] == 1) {
+                    //stt
+
+                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    //
+                } else if (f[6] == 2) {
+                    f[6] = 0;
+                    //fuction  to be done
+                    t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    Intent i = new Intent(getApplicationContext(),GesturePad.class);
                     startActivity(i);
                 }
 
