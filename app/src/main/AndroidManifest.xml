@@ -28,7 +28,8 @@
             android:name=".DialPad"
             android:label=".DialPad">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
         </activity>
