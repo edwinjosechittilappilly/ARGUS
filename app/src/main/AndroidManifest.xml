@@ -15,6 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GesturePad"
+            android:label=".GesturePad">
+
+        </activity>
     </application>
 
 </manifest>
