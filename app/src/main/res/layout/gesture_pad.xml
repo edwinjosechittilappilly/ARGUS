@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     android:eventsInterceptionEnabled="true"
     android:gestureStrokeType="multiple"
-    android:orientation="vertical">>
+    android:orientation="vertical">
 
 </android.gesture.GestureOverlayView>
