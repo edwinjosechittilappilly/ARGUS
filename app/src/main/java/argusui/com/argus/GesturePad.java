@@ -74,20 +74,42 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
             String result = predictions.get(0).name;
 
             if ("music".equalsIgnoreCase(result)) {
-
-                t1.speak("  opening music player", TextToSpeech.QUEUE_FLUSH, null);
+                t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
+                        if (status != TextToSpeech.ERROR) {
+                            t1.setLanguage(Locale.UK);
+                        }
+                        t1.speak("  opening music player", TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                });
                 Toast.makeText(this, "Opening music player ", Toast.LENGTH_LONG).show();
 
             } else if ("contacts".equalsIgnoreCase(result)) {
 
                 Toast.makeText(this, "opening contacts", Toast.LENGTH_LONG).show();
-                t1.speak("  opening contacts", TextToSpeech.QUEUE_FLUSH, null);
+                t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
+                        if (status != TextToSpeech.ERROR) {
+                            t1.setLanguage(Locale.UK);
+                        }
+                        t1.speak("  opening contacts ", TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                });
+
 
             } else if ("dialer".equalsIgnoreCase(result)) {
-
-
-                Intent i = new Intent(Intent.ACTION_DIAL);
-                t1.speak(" Opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
+                Intent i = new Intent(getApplicationContext(),DialPad.class);
+                t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int status) {
+                        if (status != TextToSpeech.ERROR) {
+                            t1.setLanguage(Locale.UK);
+                        }
+                        t1.speak("  opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                });
                 startActivity(i);
 
 

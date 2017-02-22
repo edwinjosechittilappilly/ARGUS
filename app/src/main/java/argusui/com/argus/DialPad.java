@@ -69,13 +69,15 @@ public class DialPad extends AppCompatActivity {
         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
+
                 if (status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    t1.setLanguage(Locale.US);
                 }
+                t1.speak(" Dialer  Opened ", TextToSpeech.QUEUE_FLUSH, null);
             }
         });
         //button 0
-         
+
         b[0].setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -42,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
+
                 if (status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.UK);
                 }
+                t1.speak(" Home  Screen ", TextToSpeech.QUEUE_FLUSH, null);
             }
         });
         //home screen talking
