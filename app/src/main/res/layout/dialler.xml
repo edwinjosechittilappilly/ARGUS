@@ -1,11 +1,15 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="right"
+    android:layout_gravity="end|bottom"
+
     android:layout_centerVertical="true"
     android:columnCount="6"
     android:orientation="horizontal"
-    android:paddingTop="@dimen/dialler_top_margin">
+    android:paddingTop="@dimen/dialler_top_margin"
+    android:paddingBottom="@dimen/dialler_bottom_margin"
+    android:paddingLeft="@dimen/dialler_bottom_margin"
+    android:paddingRight="@dimen/dialler_bottom_margin">
     <TextView
 
         android:layout_height="29dp"
