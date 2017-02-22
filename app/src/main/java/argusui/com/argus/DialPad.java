@@ -15,11 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.lang.String;
 import java.util.Locale;
 
 public class DialPad extends AppCompatActivity {
 
-
+    private int l;
     Button b[] = new Button[20];
     Button dial, bksp;
     TextToSpeech t1;
@@ -30,7 +31,7 @@ public class DialPad extends AppCompatActivity {
     int f[] = new int[100];
 
     public void nrst(int n) {
-         
+
         for (int i = 0; i < f.length; i++) {
             if (i != n)
                 f[i] = 0;
@@ -82,7 +83,7 @@ public class DialPad extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 0;
                 nrst(index);
@@ -108,7 +109,7 @@ public class DialPad extends AppCompatActivity {
         b[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 1;
                 nrst(index);
@@ -134,7 +135,7 @@ public class DialPad extends AppCompatActivity {
         b[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 2;
                 nrst(index);
@@ -159,7 +160,7 @@ public class DialPad extends AppCompatActivity {
         b[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 3;
                 nrst(index);
@@ -173,8 +174,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -183,7 +185,7 @@ public class DialPad extends AppCompatActivity {
         b[4].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 4;
                 nrst(index);
@@ -197,8 +199,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -207,7 +210,7 @@ public class DialPad extends AppCompatActivity {
         b[5].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 5;
                 nrst(index);
@@ -221,8 +224,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -231,7 +235,7 @@ public class DialPad extends AppCompatActivity {
         b[6].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
 
                 int index = 6;
                 nrst(index);
@@ -245,8 +249,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -255,7 +260,7 @@ public class DialPad extends AppCompatActivity {
         b[7].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 7;
                 nrst(index);
                 f[index]++;
@@ -268,8 +273,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -278,7 +284,7 @@ public class DialPad extends AppCompatActivity {
         b[8].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 8;
                 nrst(index);
                 f[index]++;
@@ -291,8 +297,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -301,7 +308,7 @@ public class DialPad extends AppCompatActivity {
         b[9].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 9;
                 nrst(index);
                 f[index]++;
@@ -314,8 +321,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;txt.setText(ph);
-                     
+                    ph = ph + "" + index;
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -325,7 +333,7 @@ public class DialPad extends AppCompatActivity {
         b[10].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 10;
                 nrst(index);
                 f[index]++;
@@ -338,8 +346,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + "*";txt.setText(ph);
-                     
+                    ph = ph + "" + "*";
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -348,7 +357,7 @@ public class DialPad extends AppCompatActivity {
         b[11].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 11;
                 nrst(index);
                 f[index]++;
@@ -361,8 +370,9 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + "#";txt.setText(ph);
-                     
+                    ph = ph + "" + "#";
+                    txt.setText(ph);
+
                     //fuction  to be done
                 }
             }
@@ -375,18 +385,18 @@ public class DialPad extends AppCompatActivity {
         dial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 11;
                 nrst(index);
                 f[index]++;
                 if (f[index] == 1) {
                     //stt
+                    t1.speak("Dialed number is "+ph+" press again to call", TextToSpeech.QUEUE_FLUSH, null);
 
-                    t1.speak("Dialed phber is " + ph + " press again to call", TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[index] == 2) {
                     f[index] = 0;
-                    t1.speak(" dialing " + ph, TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak(" dialing ", TextToSpeech.QUEUE_FLUSH, null);
                     Intent intent = new Intent(Intent.ACTION_DIAL);
                     intent.setData(Uri.parse("tel:" + ph));
                     startActivity(intent);
@@ -405,7 +415,7 @@ public class DialPad extends AppCompatActivity {
         bksp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+
                 int index = 12;
                 nrst(index);
                 f[index]++;
@@ -423,10 +433,10 @@ public class DialPad extends AppCompatActivity {
                         ph = ph.substring(0, ph.length() - 1);
                         txt.setText(ph);
                         t1.speak(" removed " + rem, TextToSpeech.QUEUE_FLUSH, null);
-                         
+
                     } else {
                         t1.speak("No number to delete", TextToSpeech.QUEUE_FLUSH, null);
-                         
+
                     }
                     // /fuction  to be done
                 }
