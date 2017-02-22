@@ -136,7 +136,16 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                     act = "";
                     flag = 0;
                     Toast.makeText(this, "opening contacts", Toast.LENGTH_LONG).show();
-                    t1.speak("  opening contacts ", TextToSpeech.QUEUE_FLUSH, null);
+                    t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                        @Override
+                        public void onInit(int status) {
+                            if (status != TextToSpeech.ERROR) {
+                                t1.setLanguage(Locale.UK);
+                            }
+                            t1.speak("  opening contacts ", TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                    });
+
                     Intent read1 = new Intent();
                     read1.setAction(android.content.Intent.ACTION_VIEW);
                     read1.setData(ContactsContract.Contacts.CONTENT_URI);
@@ -145,31 +154,61 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
 
                 //opening traditional contacts
             } else if ("dialer".equalsIgnoreCase(result)) {
-                Intent i = new Intent(getApplicationContext(), DialPad.class);
-                t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                    @Override
-                    public void onInit(int status) {
-                        if (status != TextToSpeech.ERROR) {
-                            t1.setLanguage(Locale.UK);
+                if (flag == 0) {
+                    act = result;
+                    t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                        @Override
+                        public void onInit(int status) {
+                            if (status != TextToSpeech.ERROR) {
+                                t1.setLanguage(Locale.UK);
+                            }
+                            t1.speak("  dialer. tick to open", TextToSpeech.QUEUE_FLUSH, null);
                         }
-                        t1.speak("  opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                });
-                startActivity(i);
+                    });
+                } else if (flag == 2) {
+                    act = "";
+                    flag = 0;
+                    Intent i = new Intent(getApplicationContext(), DialPad.class);
+                    t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                        @Override
+                        public void onInit(int status) {
+                            if (status != TextToSpeech.ERROR) {
+                                t1.setLanguage(Locale.UK);
+                            }
+                            t1.speak("  opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                    });
+                    startActivity(i);
+                }
 
 
             } else if ("home".equalsIgnoreCase(result)) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                    @Override
-                    public void onInit(int status) {
-                        if (status != TextToSpeech.ERROR) {
-                            t1.setLanguage(Locale.UK);
+                if (flag == 0) {
+                    act = result;
+                    t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                        @Override
+                        public void onInit(int status) {
+                            if (status != TextToSpeech.ERROR) {
+                                t1.setLanguage(Locale.UK);
+                            }
+                            t1.speak("  Home screen. tick to open", TextToSpeech.QUEUE_FLUSH, null);
                         }
-                        t1.speak("  opening Home screen ", TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                });
-                startActivity(i);
+                    });
+                } else if (flag == 2) {
+                    act = "";
+                    flag = 0;
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                        @Override
+                        public void onInit(int status) {
+                            if (status != TextToSpeech.ERROR) {
+                                t1.setLanguage(Locale.UK);
+                            }
+                            t1.speak("  opening Home screen ", TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                    });
+                    startActivity(i);
+                }
             }
 
         }
