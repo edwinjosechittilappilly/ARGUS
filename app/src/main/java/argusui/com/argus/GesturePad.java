@@ -166,6 +166,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         }
                     });
                 } else if (flag == 2) {
+
                     act = "";
                     flag = 0;
                     Intent i = new Intent(getApplicationContext(), DialPad.class);
