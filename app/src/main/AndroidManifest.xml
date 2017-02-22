@@ -21,13 +21,18 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.P" />
+
             </intent-filter>
         </activity>
         <activity
             android:name=".GesturePad"
             android:label=".GesturePad">
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.gesture" />
+                <category android:name="android.intent.category.APP_MUSIC" />
             </intent-filter>
 
         </activity>
