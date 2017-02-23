@@ -41,9 +41,9 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
-import argusui.com.argus.CameraSource;
-import argusui.com.argus.CameraSourcePreview;
-import argusui.com.argus.GraphicOverlay;
+import argusui.com.argus.ui.camera.CameraSource;
+import argusui.com.argus.ui.camera.CameraSourcePreview;
+import argusui.com.argus.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="argusui.com.argus">
+    package="argusui.com.argus"
+    android:installLocation="auto">
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -8,6 +9,8 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -23,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.HOME" />
-                <category android:name="android.intent.category.P" />
 
             </intent-filter>
         </activity>
@@ -47,8 +49,23 @@
 
         </activity>
 
-        <activity android:name="argusui.com.argus.OcrCaptureActivity"
-            android:label="Read Text" />
+        <activity
+            android:name=".ArgusCam"
+            android:label="ArgusCam">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".OcrCaptureActivity"
+            android:label="Read Text"></activity>
+        <activity android:name=".OcrDetectorProcessor"></activity>
+        <activity android:name=".OcrGraphic"></activity>
+
     </application>
 
 </manifest>

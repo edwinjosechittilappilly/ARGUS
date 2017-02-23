@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    Button b1, b2, b3, b4, b5,b6;
+    Button b1, b2, b3, b4, b5, b6, b7;
     TextView bt;
     int f1, f2, f3, f4, f5;
     TextToSpeech t1;
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     f[2] = 0;
                     //fuction  to be done
                     t1.speak(" Opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
-                    Intent i = new Intent(getApplicationContext(),DialPad.class);
+                    Intent i = new Intent(getApplicationContext(), DialPad.class);
                     startActivity(i);
                 }
             }
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //getsture
-        b6=(Button)findViewById(R.id.button6);
+        b6 = (Button) findViewById(R.id.button6);
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,7 +206,34 @@ public class MainActivity extends AppCompatActivity {
                     f[6] = 0;
                     //fuction  to be done
                     t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    Intent i = new Intent(getApplicationContext(),GesturePad.class);
+                    Intent i = new Intent(getApplicationContext(), GesturePad.class);
+                    startActivity(i);
+                }
+
+
+                //
+
+            }
+        });
+
+        b7 = (Button) findViewById(R.id.button3);
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nrst(7);
+                f[7]++;
+                String toSpeak = b3.getText().toString();
+                if (f[7] == 1) {
+                    //stt
+
+                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    //
+                } else if (f[7] == 2) {
+                    f[7] = 0;
+                    //fuction  to be done
+                    t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    Intent i = new Intent(getApplicationContext(), ArgusCam.class);
                     startActivity(i);
                 }
 

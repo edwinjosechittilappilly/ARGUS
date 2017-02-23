@@ -50,7 +50,7 @@ public class ArgusCam extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.read_text) {
             // launch Ocr capture activity.
-            Intent intent = new Intent(this, OcrCaptureActivity.class);
+            Intent intent = new Intent(getApplicationContext(), OcrCaptureActivity.class);
             intent.putExtra(OcrCaptureActivity.AutoFocus, autoFocus.isChecked());
             intent.putExtra(OcrCaptureActivity.UseFlash, useFlash.isChecked());
 

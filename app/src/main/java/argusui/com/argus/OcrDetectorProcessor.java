@@ -17,7 +17,7 @@ package argusui.com.argus;
 
 import android.util.SparseArray;
 
-import argusui.com.argus.GraphicOverlay;
+import argusui.com.argus.ui.camera.GraphicOverlay;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 
