@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                     //
                 } else if (f[6] == 2) {
                     f[6] = 0;
-                    //fuction  to be done
+                    //function  to be done
                     t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent(getApplicationContext(), GesturePad.class);
                     startActivity(i);

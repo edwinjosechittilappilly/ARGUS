@@ -18,8 +18,7 @@
         android:id="@+id/dphoneno"
         android:layout_width="320dp"
         android:text='""'
-        android:paddingBottom="@dimen/text_field_bottom_margin"
-        android:textSize="40dp"
+        android:textSize="40sp"
         />
 
 
@@ -27,88 +26,88 @@
         android:text="    1    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:id="@+id/buttond1"/>
     <Button
         android:text="    2    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttond2"/>
     <Button
         android:text="    3    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttond3"/>
     <Button
         android:text="    4    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:id="@+id/buttond4"/>
     <Button
         android:text="    5    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttond5"/>
     <Button
         android:text="    6    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttond6"/>
     <Button
         android:text="    7    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttond7"/>
     <Button
         android:text="    8    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:id="@+id/buttond8"/>
     <Button
         android:text="    9    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttond9"/>
     <Button
         android:text="    *    "
         android:layout_columnSpan="2"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_gravity="fill"
         android:id="@+id/buttonds"/>
     <Button
         android:text="    0    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:id="@+id/buttond0"/>
     <Button
         android:text="    #    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:id="@+id/buttondh"/>
     <Button
         android:text="   Call   "
         android:layout_columnSpan="3"
         android:layout_gravity="left"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:id="@+id/buttondcall"
-        android:minWidth="130dp" />
+        android:minWidth="130sp" />
     <Button
         android:text="Delete"
         android:layout_columnSpan="3"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:layout_gravity="right"
         android:id="@+id/buttondback"
-        android:minWidth="140dp" />
+        android:minWidth="140sp" />
 
 
 
