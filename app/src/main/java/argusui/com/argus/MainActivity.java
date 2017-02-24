@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -15,6 +16,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     Button b1, b2, b3, b4, b5, b6, b7;
     TextView bt;
+    TextClock bclk;
     int f1, f2, f3, f4, f5;
     TextToSpeech t1;
     int f[] = new int[10];
@@ -57,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
                 //home screen stt
                 String toSpeak = bt.getText().toString();
                 t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+        bclk = (TextClock) findViewById(R.id.textClock);
+        bclk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //home screen stt
+                String toSpeak = bclk.getText().toString();
+                t1.speak("Time is " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
 
