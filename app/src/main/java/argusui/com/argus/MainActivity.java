@@ -236,10 +236,6 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), ArgusCam.class);
                     startActivity(i);
                 }
-
-
-                //
-
             }
         });
     }
