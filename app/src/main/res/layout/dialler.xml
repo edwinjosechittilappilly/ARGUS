@@ -17,78 +17,95 @@
         android:ems="10"
         android:id="@+id/dphoneno"
         android:layout_width="320dp"
-        android:text='""' />
+        android:text='""'
+        android:paddingBottom="@dimen/text_field_bottom_margin"
+        android:textSize="40dp"
+        />
 
 
     <Button
-        android:text="\n           1           \n"
+        android:text="    1    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
+        android:textSize="40dp"
         android:id="@+id/buttond1"/>
     <Button
-        android:text="\n           2           \n"
+        android:text="    2    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttond2"/>
     <Button
-        android:text="\n           3           \n"
+        android:text="    3    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttond3"/>
     <Button
-        android:text="\n           4           \n"
+        android:text="    4    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
+        android:textSize="40dp"
         android:id="@+id/buttond4"/>
     <Button
-        android:text="\n           5           \n"
+        android:text="    5    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttond5"/>
     <Button
-        android:text="\n           6           \n"
+        android:text="    6    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttond6"/>
     <Button
-        android:text="\n           7           \n"
+        android:text="    7    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttond7"/>
     <Button
-        android:text="\n           8           \n"
+        android:text="    8    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
+        android:textSize="40dp"
         android:id="@+id/buttond8"/>
     <Button
-        android:text="\n           9           \n"
+        android:text="    9    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttond9"/>
     <Button
-        android:text="\n           *           \n"
+        android:text="    *    "
         android:layout_columnSpan="2"
+        android:textSize="40dp"
         android:layout_gravity="fill"
         android:id="@+id/buttonds"/>
     <Button
-        android:text="\n           0           \n"
+        android:text="    0    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
+        android:textSize="40dp"
         android:id="@+id/buttond0"/>
     <Button
-        android:text="\n           #           \n"
+        android:text="    #    "
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
+        android:textSize="40dp"
         android:id="@+id/buttondh"/>
     <Button
-        android:text="\n\n           Call                  \n\n"
+        android:text="   Call   "
         android:layout_columnSpan="3"
         android:layout_gravity="left"
+        android:textSize="45dp"
         android:id="@+id/buttondcall"
         android:minWidth="130dp" />
     <Button
-        android:text="\n\n              Delete           \n\n"
+        android:text="Delete"
         android:layout_columnSpan="3"
+        android:textSize="45dp"
         android:layout_gravity="right"
         android:id="@+id/buttondback"
         android:minWidth="140dp" />
