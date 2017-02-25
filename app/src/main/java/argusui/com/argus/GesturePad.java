@@ -6,12 +6,15 @@ package argusui.com.argus;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.gesture.Gesture;
 import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
 import android.media.MediaPlayer;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
@@ -27,6 +30,8 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
     public TextToSpeech t1;
     public int flag = 0;
     private String act = "";
+    SharedPreferences mPrefs3;
+    final String welcomeScreenShownPref = "welcomeScreenShown";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,29 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                 }
             }
         });
+        //welcome
+
+        mPrefs3 = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // second argument is the default to use if the preference can't be found
+        Boolean welcomeScreenShown = mPrefs3.getBoolean(welcomeScreenShownPref, false);
+
+        if (!welcomeScreenShown) {
+            // here you can launch another activity if you like
+            // the code below will display a popup
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Do something after 5s = 5000ms
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.gesture);
+                    mp.start();
+                }
+            }, 5000);
+            SharedPreferences.Editor editor = mPrefs3.edit();
+            editor.putBoolean(welcomeScreenShownPref, true);
+            editor.commit(); // Very important to save the preference
+        }
 
         mLibrary = GestureLibraries.fromRawResource(this, R.raw.gestures);
         if (!mLibrary.load()) {

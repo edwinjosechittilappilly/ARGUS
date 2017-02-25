@@ -5,7 +5,11 @@ package argusui.com.argus;
  */
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +29,12 @@ public class DialPad extends AppCompatActivity {
     Button dial, bksp;
     TextToSpeech t1;
     TextView txt;
+    //test
+
+
+    SharedPreferences mPrefs2;
+    final String welcomeScreenShownPref = "welcomeScreenShown";
+    //
 
     String ph = "";
 
@@ -44,6 +54,42 @@ public class DialPad extends AppCompatActivity {
         setContentView(R.layout.dialler);
         txt = (TextView) findViewById(R.id.dphoneno);
 
+        //
+        mPrefs2 = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // second argument is the default to use if the preference can't be found
+        Boolean welcomeScreenShown = mPrefs2.getBoolean(welcomeScreenShownPref, false);
+
+        if (!welcomeScreenShown) {
+            // here you can launch another activity if you like
+            // the code below will display a popup
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Do something after 5s = 5000ms
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.dialer);
+                    mp.start();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Do something after 5s = 5000ms
+                            MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.dialertap);
+                            mp.start();
+                        }
+                    }, 11000);
+                }
+            }, 5000);
+
+             /*MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
+                    mp.start();*/
+
+            SharedPreferences.Editor editor = mPrefs2.edit();
+            editor.putBoolean(welcomeScreenShownPref, true);
+            editor.commit(); // Very important to save the preference
+        }
+
+        //
         //resetting buttons
         for (int i = 0; i < f.length; i++) {
             f[i] = 0;
@@ -391,14 +437,14 @@ public class DialPad extends AppCompatActivity {
                 f[index]++;
                 if (f[index] == 1) {
                     //stt
-                    t1.speak("Dialed number is "+ph+" press again to call", TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak("Dialed number is " + ph + " press again to call", TextToSpeech.QUEUE_FLUSH, null);
 
                     //
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" dialing ", TextToSpeech.QUEUE_FLUSH, null);
                     Intent intent = new Intent(Intent.ACTION_DIAL);
-                    ph=ph.replaceAll("\\s+","");
+                    ph = ph.replaceAll("\\s+", "");
                     intent.setData(Uri.parse("tel:" + ph));
                     startActivity(intent);
                     ph = "";
