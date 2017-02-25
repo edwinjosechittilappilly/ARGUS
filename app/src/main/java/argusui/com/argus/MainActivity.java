@@ -33,12 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //
-        //resetting values
 
-        for (int i = 0; i < f.length; i++) {
-            f[i] = 0;
-        }
-        //
 
         //stt
         t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -51,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 t1.speak(" Home  Screen ", TextToSpeech.QUEUE_FLUSH, null);
             }
         });
+        //resetting values
+
+        for (int i = 0; i < f.length; i++) {
+            f[i] = 0;
+        }
+        //
         //home screen talking
         bt = (TextView) findViewById(R.id.textView2);
         bt.setOnClickListener(new View.OnClickListener() {
@@ -105,11 +106,11 @@ public class MainActivity extends AppCompatActivity {
                 //
                 nrst(2);
                 f[2]++;
-                String toSpeak = b2.getText().toString();
+
                 if (f[2] == 1) {
                     //stt
 
-                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak("Dialer", TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[2] == 2) {
                     f[2] = 0;
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //button 3
-        b3 = (Button) findViewById(R.id.button3);
+        b3 = (Button) findViewById(R.id.button7);
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,9 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     f[3] = 0;
                     //fuction  to be done
                     t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    Intent read1 = new Intent();
-                    read1.setAction(android.content.Intent.ACTION_VIEW);
-                    read1.setData(ContactsContract.Contacts.CONTENT_URI);
+                    Intent read1 = new Intent(getApplicationContext(),Contacts.class);
                     startActivity(read1);
                 }
 
@@ -207,16 +206,15 @@ public class MainActivity extends AppCompatActivity {
 
                 nrst(6);
                 f[6]++;
-                String toSpeak = b6.getText().toString();
                 if (f[6] == 1) {
                     //stt
 
-                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak("Gesture", TextToSpeech.QUEUE_FLUSH, null);
                     //
                 } else if (f[6] == 2) {
                     f[6] = 0;
                     //function  to be done
-                    t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak(" Opening gesture page", TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent(getApplicationContext(), GesturePad.class);
                     startActivity(i);
                 }
@@ -234,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
 
                 nrst(7);
                 f[7]++;
-                String toSpeak = b3.getText().toString();
+                String toSpeak = "OCR Camera ";
                 if (f[7] == 1) {
                     //stt
 

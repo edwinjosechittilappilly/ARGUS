@@ -48,6 +48,15 @@
             </intent-filter>
 
         </activity>
+        <activity
+            android:name=".Contacts"
+            android:label="Contacts">
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name=".ArgusCam"

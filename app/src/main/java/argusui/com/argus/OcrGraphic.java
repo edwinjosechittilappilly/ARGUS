@@ -81,11 +81,11 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
      * @return True if the provided point is contained within this graphic's bounding box.
      */
     public boolean contains(float x, float y) {
-        TextBlock text = mText;
-        if (text == null) {
+        // TODO: Check if this graphic's text contains this point.
+        if (mText == null) {
             return false;
         }
-        RectF rect = new RectF(text.getBoundingBox());
+        RectF rect = new RectF(mText.getBoundingBox());
         rect.left = translateX(rect.left);
         rect.top = translateY(rect.top);
         rect.right = translateX(rect.right);

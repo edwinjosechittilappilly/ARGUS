@@ -27,6 +27,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -41,13 +42,16 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
+
 import argusui.com.argus.ui.camera.CameraSource;
 import argusui.com.argus.ui.camera.CameraSourcePreview;
 import argusui.com.argus.ui.camera.GraphicOverlay;
+
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Activity for the multi-tracker app.  This app detects text and displays the value with the
@@ -56,7 +60,7 @@ import java.io.IOException;
  */
 public final class OcrCaptureActivity extends AppCompatActivity {
     private static final String TAG = "OcrCaptureActivity";
-
+    TextToSpeech tts;
     // Intent request code to handle updating play services if needed.
     private static final int RC_HANDLE_GMS = 9001;
 
@@ -106,6 +110,21 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         Snackbar.make(mGraphicOverlay, "Tap to capture. Pinch/Stretch to zoom",
                 Snackbar.LENGTH_LONG)
                 .show();
+
+        // TODO: Set up the Text To Speech engine.
+        TextToSpeech.OnInitListener listener =
+                new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(final int status) {
+                        if (status == TextToSpeech.SUCCESS) {
+                            Log.d("TTS", "Text to speech engine started successfully.");
+                            tts.setLanguage(Locale.US);
+                        } else {
+                            Log.d("TTS", "Error starting the text to speech engine.");
+                        }
+                    }
+                };
+        tts = new TextToSpeech(this.getApplicationContext(), listener);
     }
 
     /**
@@ -153,7 +172,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      * Creates and starts the camera.  Note that this uses a higher resolution in comparison
      * to other detection examples to enable the ocr detector to detect small text samples
      * at long distances.
-     *
+     * <p>
      * Suppressing InlinedApi since there is a check that the minimum version is met before using
      * the constant.
      */
@@ -194,12 +213,12 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         // to other detection examples to enable the text recognizer to detect small pieces of text.
         mCameraSource =
                 new CameraSource.Builder(getApplicationContext(), textRecognizer)
-                .setFacing(CameraSource.CAMERA_FACING_BACK)
-                .setRequestedPreviewSize(1280, 1024)
-                .setRequestedFps(2.0f)
-                .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
-                .setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null)
-                .build();
+                        .setFacing(CameraSource.CAMERA_FACING_BACK)
+                        .setRequestedPreviewSize(1280, 1024)
+                        .setRequestedFps(2.0f)
+                        .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
+                        .setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null)
+                        .build();
     }
 
     /**
@@ -263,7 +282,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "Camera permission granted - initialize the camera source");
             // We have permission, so create the camerasource
-            boolean autoFocus = getIntent().getBooleanExtra(AutoFocus,false);
+            boolean autoFocus = getIntent().getBooleanExtra(AutoFocus, false);
             boolean useFlash = getIntent().getBooleanExtra(UseFlash, false);
             createCameraSource(autoFocus, useFlash);
             return;
@@ -320,22 +339,20 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      * @return true if the activity is ending.
      */
     private boolean onTap(float rawX, float rawY) {
+        // TODO: Speak the text when the user taps on screen.
         OcrGraphic graphic = mGraphicOverlay.getGraphicAtLocation(rawX, rawY);
         TextBlock text = null;
         if (graphic != null) {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
-                Intent data = new Intent();
-                data.putExtra(TextBlockObject, text.getValue());
-                setResult(CommonStatusCodes.SUCCESS, data);
-                finish();
-            }
-            else {
+                Log.d(TAG, "text data is being spoken! " + text.getValue());
+                // TODO: Speak the string.
+                tts.speak(text.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+            } else {
                 Log.d(TAG, "text data is null");
             }
-        }
-        else {
-            Log.d(TAG,"no text detected");
+        } else {
+            Log.d(TAG, "no text detected");
         }
         return text != null;
     }
