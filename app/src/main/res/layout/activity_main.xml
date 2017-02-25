@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp" />
+        android:layout_marginTop="7dp"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -36,7 +37,8 @@
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/button5"
-        android:text="google.com" />
+        android:text="google.com"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/button4"
@@ -46,7 +48,8 @@
         android:layout_below="@+id/textView2"
         android:layout_marginTop="11dp"
         android:layout_toEndOf="@+id/button6"
-        android:text="Voice" />
+        android:text="Voice"
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button7"
@@ -54,7 +57,8 @@
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/button"
-        android:text="Contacts" />
+        android:text="Contacts"
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button5"
@@ -63,7 +67,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/button4"
         android:layout_toEndOf="@+id/button6"
-        android:text="camera" />
+        android:text="camera"
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button3"
@@ -71,7 +76,8 @@
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/button7"
-        android:text="OCR Camera" />
+        android:text="OCR Camera"
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button6"
@@ -79,7 +85,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:autoText="false"
-        android:text="Gesture" />
+        android:text="G\ne\ns\nt\nu\nr\ne"
+        android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button2"
@@ -88,7 +95,8 @@
         android:layout_alignBottom="@+id/button6"
         android:layout_alignParentEnd="true"
         android:layout_gravity="right"
-        android:text="call" />
+        android:text="c\na\nl\nl"
+        android:textSize="30sp"/>
 
 
 </RelativeLayout>
