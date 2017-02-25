@@ -62,7 +62,9 @@
 
         <activity
             android:name=".OcrCaptureActivity"
-            android:label="Read Text"></activity>
+            android:label="Read Text">
+
+        </activity>
         <activity android:name=".OcrDetectorProcessor"></activity>
         <activity android:name=".OcrGraphic"></activity>
 
