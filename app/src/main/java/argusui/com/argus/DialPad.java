@@ -97,7 +97,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
 
@@ -123,7 +123,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -149,7 +149,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
                     //fuction  to be done
                 }
@@ -174,7 +174,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -199,7 +199,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -224,7 +224,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -249,7 +249,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -273,7 +273,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -297,7 +297,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -321,7 +321,7 @@ public class DialPad extends AppCompatActivity {
                 } else if (f[index] == 2) {
                     f[index] = 0;
                     t1.speak(" pressed " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    ph = ph + "" + index;
+                    ph = ph + " " + index;
                     txt.setText(ph);
 
                     //fuction  to be done
@@ -398,6 +398,7 @@ public class DialPad extends AppCompatActivity {
                     f[index] = 0;
                     t1.speak(" dialing ", TextToSpeech.QUEUE_FLUSH, null);
                     Intent intent = new Intent(Intent.ACTION_DIAL);
+                    ph=ph.replaceAll("\\s+","");
                     intent.setData(Uri.parse("tel:" + ph));
                     startActivity(intent);
                     ph = "";

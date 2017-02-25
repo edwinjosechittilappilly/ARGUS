@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onInit(int status) {
 
                 if (status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    t1.setLanguage(new Locale("en", "IN"));
                 }
                 t1.speak(" Home  Screen ", TextToSpeech.QUEUE_FLUSH, null);
             }

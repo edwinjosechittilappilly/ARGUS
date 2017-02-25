@@ -35,7 +35,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    t1.setLanguage(new Locale("en", "IN"));
                 }
             }
         });
@@ -83,7 +83,8 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
             @Override
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    //t1.setLanguage(new Locale("en", "IN"));
+                    t1.setLanguage(new Locale("en", "IN"));
                 }
             }
         });
@@ -103,7 +104,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  music player tick to open", TextToSpeech.QUEUE_FLUSH, null);
                         }
@@ -127,7 +128,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  contacts tick to open", TextToSpeech.QUEUE_FLUSH, null);
                         }
@@ -140,7 +141,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  opening contacts ", TextToSpeech.QUEUE_FLUSH, null);
                         }
@@ -160,7 +161,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  dialer. tick to open", TextToSpeech.QUEUE_FLUSH, null);
                         }
@@ -174,7 +175,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  opening Dialer ", TextToSpeech.QUEUE_FLUSH, null);
                         }
@@ -190,7 +191,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  Home screen. tick to open", TextToSpeech.QUEUE_FLUSH, null);
                         }
@@ -203,7 +204,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         @Override
                         public void onInit(int status) {
                             if (status != TextToSpeech.ERROR) {
-                                t1.setLanguage(Locale.UK);
+                                t1.setLanguage(new Locale("en", "IN"));
                             }
                             t1.speak("  opening Home screen ", TextToSpeech.QUEUE_FLUSH, null);
                         }
