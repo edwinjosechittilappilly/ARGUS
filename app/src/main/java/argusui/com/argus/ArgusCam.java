@@ -3,8 +3,13 @@
 package argusui.com.argus;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -23,6 +28,12 @@ public class ArgusCam extends Activity implements View.OnClickListener {
     private CompoundButton useFlash;
     private TextView statusMessage;
     private TextView textValue;
+    //test
+
+
+    SharedPreferences mPrefs;
+    final String welcomeScreenShownPref = "welcomeScreenShown";
+    //
 
     private static final int RC_OCR_CAPTURE = 9003;
     private static final String TAG = "ArgusCam";
@@ -37,6 +48,34 @@ public class ArgusCam extends Activity implements View.OnClickListener {
 
         autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
         useFlash = (CompoundButton) findViewById(R.id.use_flash);
+        //welcome
+
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // second argument is the default to use if the preference can't be found
+        Boolean welcomeScreenShown = mPrefs.getBoolean(welcomeScreenShownPref, false);
+
+        if (!welcomeScreenShown) {
+            // here you can launch another activity if you like
+            // the code below will display a popup
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Do something after 5s = 5000ms
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
+                    mp.start();
+                }
+            }, 5000);
+             /*MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
+                    mp.start();*/
+
+            SharedPreferences.Editor editor = mPrefs.edit();
+            editor.putBoolean(welcomeScreenShownPref, true);
+            editor.commit(); // Very important to save the preference
+        }
+
+        //
 
         findViewById(R.id.read_text).setOnClickListener(this);
     }
@@ -48,6 +87,7 @@ public class ArgusCam extends Activity implements View.OnClickListener {
      */
     @Override
     public void onClick(View v) {
+
         if (v.getId() == R.id.read_text) {
             // launch Ocr capture activity.
             Intent intent = new Intent(getApplicationContext(), OcrCaptureActivity.class);

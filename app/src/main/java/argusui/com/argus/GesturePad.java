@@ -11,6 +11,7 @@ import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
+import android.media.MediaPlayer;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
@@ -146,6 +147,8 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                             t1.speak("  opening contacts ", TextToSpeech.QUEUE_FLUSH, null);
                         }
                     });
+                   /* MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
+                    mp.start();*/
 
                     Intent read1 = new Intent(getApplicationContext(),Contacts.class);
                     startActivity(read1);
