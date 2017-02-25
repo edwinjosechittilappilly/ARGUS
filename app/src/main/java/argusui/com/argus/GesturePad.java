@@ -147,9 +147,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                         }
                     });
 
-                    Intent read1 = new Intent();
-                    read1.setAction(android.content.Intent.ACTION_VIEW);
-                    read1.setData(ContactsContract.Contacts.CONTENT_URI);
+                    Intent read1 = new Intent(getApplicationContext(),Contacts.class);
                     startActivity(read1);
                 }
 
