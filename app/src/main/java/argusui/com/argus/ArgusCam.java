@@ -10,12 +10,15 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
+
+import java.util.Locale;
 
 /**
  * Main activity demonstrating how to pass extra parameters to an activity that
@@ -28,6 +31,7 @@ public class ArgusCam extends Activity implements View.OnClickListener {
     private CompoundButton useFlash;
     private TextView statusMessage;
     private TextView textValue;
+    TextToSpeech t1;
     //test
 
 
@@ -89,10 +93,28 @@ public class ArgusCam extends Activity implements View.OnClickListener {
     public void onClick(View v) {
 
         if (v.getId() == R.id.read_text) {
+
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Do something after 5s = 5000ms
+                    t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                        @Override
+                        public void onInit(int status) {
+                            if (status != TextToSpeech.ERROR) {
+                                t1.setLanguage(new Locale("en", "IN"));
+                            }
+                            t1.speak("  Detecting Text Tap ON screen to get voice response", TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                    });
+                }
+            }, 2000);
             // launch Ocr capture activity.
             Intent intent = new Intent(getApplicationContext(), OcrCaptureActivity.class);
             intent.putExtra(OcrCaptureActivity.AutoFocus, autoFocus.isChecked());
             intent.putExtra(OcrCaptureActivity.UseFlash, useFlash.isChecked());
+
 
             startActivityForResult(intent, RC_OCR_CAPTURE);
         }

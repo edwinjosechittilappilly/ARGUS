@@ -223,9 +223,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (f[5] == 2) {
                     f[5] = 0;
                     //fuction  to be done
-                    t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-                    Intent i = new Intent("android.media.action.IMAGE_CAPTURE");
-                    startActivity(i);
+                    //t1.speak(" Opening " + toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beta);
+                    mp.start();
                 }
 
 
@@ -249,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (f[6] == 2) {
                     f[6] = 0;
                     //function  to be done
-                    t1.speak(" Opening gesture page", TextToSpeech.QUEUE_FLUSH, null);
+                    t1.speak(" Opening ", TextToSpeech.QUEUE_FLUSH, null);
                     Intent i = new Intent(getApplicationContext(), GesturePad.class);
                     startActivity(i);
                 }

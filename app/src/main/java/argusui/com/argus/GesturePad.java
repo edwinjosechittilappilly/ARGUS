@@ -43,6 +43,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                 if (status != TextToSpeech.ERROR) {
                     t1.setLanguage(new Locale("en", "IN"));
                 }
+                t1.speak("  Gesture page", TextToSpeech.QUEUE_FLUSH, null);
             }
         });
         //welcome
