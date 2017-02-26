@@ -55,24 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     // Do something after 5s = 5000ms
-                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.arguswelcome);
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.homescreenhelp);
                     mp.start();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            // Do something after 5s = 5000ms
-                            MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.hs2);
-                            mp.start();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    // Do something after 5s = 5000ms
-                                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.hs3);
-                                    mp.start();
-                                }
-                            }, 22000);
-                        }
-                    }, 17000);
                 }
             }, 3000);
 
