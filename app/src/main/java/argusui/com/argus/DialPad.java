@@ -33,7 +33,7 @@ public class DialPad extends AppCompatActivity {
 
 
     SharedPreferences mPrefs2;
-    final String welcomeScreenShownPref = "welcomeScreenShown";
+    final String welcomeScreenShownPref2 = "welcomeScreenShown2";
     //
 
     String ph = "";
@@ -58,9 +58,9 @@ public class DialPad extends AppCompatActivity {
         mPrefs2 = PreferenceManager.getDefaultSharedPreferences(this);
 
         // second argument is the default to use if the preference can't be found
-        Boolean welcomeScreenShown = mPrefs2.getBoolean(welcomeScreenShownPref, false);
+        Boolean welcomeScreenShown2 = mPrefs2.getBoolean(welcomeScreenShownPref2, false);
 
-        if (!welcomeScreenShown) {
+        if (!welcomeScreenShown2) {
             // here you can launch another activity if you like
             // the code below will display a popup
             final Handler handler = new Handler();
@@ -85,7 +85,7 @@ public class DialPad extends AppCompatActivity {
                     mp.start();*/
 
             SharedPreferences.Editor editor = mPrefs2.edit();
-            editor.putBoolean(welcomeScreenShownPref, true);
+            editor.putBoolean(welcomeScreenShownPref2, true);
             editor.commit(); // Very important to save the preference
         }
 

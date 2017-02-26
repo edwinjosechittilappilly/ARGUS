@@ -31,8 +31,8 @@ public class ArgusCam extends Activity implements View.OnClickListener {
     //test
 
 
-    SharedPreferences mPrefs;
-    final String welcomeScreenShownPref = "welcomeScreenShown";
+    SharedPreferences mPrefs1;
+    final String welcomeScreenShownPref1 = "welcomeScreenShown1";
     //
 
     private static final int RC_OCR_CAPTURE = 9003;
@@ -50,12 +50,12 @@ public class ArgusCam extends Activity implements View.OnClickListener {
         useFlash = (CompoundButton) findViewById(R.id.use_flash);
         //welcome
 
-        mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mPrefs1 = PreferenceManager.getDefaultSharedPreferences(this);
 
         // second argument is the default to use if the preference can't be found
-        Boolean welcomeScreenShown = mPrefs.getBoolean(welcomeScreenShownPref, false);
+        Boolean welcomeScreenShown1 = mPrefs1.getBoolean(welcomeScreenShownPref1, false);
 
-        if (!welcomeScreenShown) {
+        if (!welcomeScreenShown1) {
             // here you can launch another activity if you like
             // the code below will display a popup
             final Handler handler = new Handler();
@@ -70,8 +70,8 @@ public class ArgusCam extends Activity implements View.OnClickListener {
              /*MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
                     mp.start();*/
 
-            SharedPreferences.Editor editor = mPrefs.edit();
-            editor.putBoolean(welcomeScreenShownPref, true);
+            SharedPreferences.Editor editor = mPrefs1.edit();
+            editor.putBoolean(welcomeScreenShownPref1, true);
             editor.commit(); // Very important to save the preference
         }
 

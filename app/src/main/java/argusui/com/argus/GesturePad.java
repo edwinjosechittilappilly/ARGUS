@@ -31,7 +31,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
     public int flag = 0;
     private String act = "";
     SharedPreferences mPrefs3;
-    final String welcomeScreenShownPref = "welcomeScreenShown";
+    final String welcomeScreenShownPref3 = "welcomeScreenShown3";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,9 +50,9 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
         mPrefs3 = PreferenceManager.getDefaultSharedPreferences(this);
 
         // second argument is the default to use if the preference can't be found
-        Boolean welcomeScreenShown = mPrefs3.getBoolean(welcomeScreenShownPref, false);
+        Boolean welcomeScreenShown3 = mPrefs3.getBoolean(welcomeScreenShownPref3, false);
 
-        if (!welcomeScreenShown) {
+        if (!welcomeScreenShown3) {
             // here you can launch another activity if you like
             // the code below will display a popup
             final Handler handler = new Handler();
@@ -65,7 +65,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                 }
             }, 5000);
             SharedPreferences.Editor editor = mPrefs3.edit();
-            editor.putBoolean(welcomeScreenShownPref, true);
+            editor.putBoolean(welcomeScreenShownPref3, true);
             editor.commit(); // Very important to save the preference
         }
 
