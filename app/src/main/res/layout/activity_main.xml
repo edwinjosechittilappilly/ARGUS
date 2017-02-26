@@ -34,32 +34,32 @@
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/button5"
-        android:text="google.com"
+        android:layout_below="@+id/button4"
+        android:text="Browser"
         android:textSize="30sp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="11dp"
         android:layout_toEndOf="@+id/button6"
-        android:text="Voice"
+        android:text="Voice Command"
         android:textSize="30sp"/>
 
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/button"
         android:text="Contacts"
         android:textSize="30sp"/>
-
+    <!--
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
@@ -68,15 +68,23 @@
         android:layout_below="@+id/button4"
         android:layout_toEndOf="@+id/button6"
         android:text="camera"
-        android:textSize="30sp"/>
+        android:textSize="30sp"/>  -->
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/button7"
         android:text="OCR Camera"
+        android:textSize="30sp"/>
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button3"
+        android:text="All Apps"
         android:textSize="30sp"/>
 
     <Button
