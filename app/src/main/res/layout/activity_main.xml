@@ -104,6 +104,4 @@
         android:layout_gravity="right"
         android:text="c\na\nl\nl"
         android:textSize="30sp"/>
-
-
 </RelativeLayout>
