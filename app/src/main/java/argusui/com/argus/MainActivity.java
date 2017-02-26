@@ -1,8 +1,12 @@
 package argusui.com.argus;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     int f1, f2, f3, f4, f5;
     TextToSpeech t1;
     int f[] = new int[10];
+    SharedPreferences mPrefsh;
+    final String welcomeScreenShownPrefh = "welcomeScreenShownh";
 
     public void nrst(int n) {
         for (int i = 0; i < f.length; i++) {
@@ -32,7 +38,51 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //
+
+        //
+        mPrefsh = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // second argument is the default to use if the preference can't be found
+        Boolean welcomeScreenShownh = mPrefsh.getBoolean(welcomeScreenShownPrefh, false);
+
+        if (!welcomeScreenShownh) {
+            // here you can launch another activity if you like
+            // the code below will display a popup
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Do something after 5s = 5000ms
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.arguswelcome);
+                    mp.start();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Do something after 5s = 5000ms
+                            MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.hs2);
+                            mp.start();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // Do something after 5s = 5000ms
+                                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.hs3);
+                                    mp.start();
+                                }
+                            }, 22000);
+                        }
+                    }, 17000);
+                }
+            }, 3000);
+
+             /*MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
+                    mp.start();*/
+
+            SharedPreferences.Editor editor = mPrefsh.edit();
+            editor.putBoolean(welcomeScreenShownPrefh, true);
+            editor.commit(); // Very important to save the preference
+        }
 
 
         //stt
@@ -46,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 t1.speak(" Home  Screen ", TextToSpeech.QUEUE_FLUSH, null);
             }
         });
+
         //resetting values
 
         for (int i = 0; i < f.length; i++) {

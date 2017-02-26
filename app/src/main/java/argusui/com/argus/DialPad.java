@@ -79,7 +79,7 @@ public class DialPad extends AppCompatActivity {
                         }
                     }, 11000);
                 }
-            }, 5000);
+            }, 3000);
 
              /*MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
                     mp.start();*/
