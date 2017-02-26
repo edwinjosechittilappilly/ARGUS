@@ -22,7 +22,8 @@ import android.widget.TextView;
 import java.lang.String;
 import java.util.Locale;
 
-public class DialPad extends AppCompatActivity {
+public class
+DialPad extends AppCompatActivity {
 
     private int l;
     Button b[] = new Button[20];
