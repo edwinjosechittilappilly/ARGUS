@@ -66,7 +66,7 @@ public class ArgusCam extends Activity implements View.OnClickListener {
                     MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
                     mp.start();
                 }
-            }, 5000);
+            }, 3000);
              /*MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.ocrcamera);
                     mp.start();*/
 

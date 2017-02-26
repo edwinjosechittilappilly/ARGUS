@@ -63,7 +63,7 @@ public class GesturePad extends Activity implements GestureOverlayView.OnGesture
                     MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.gesture);
                     mp.start();
                 }
-            }, 5000);
+            }, 3000);
             SharedPreferences.Editor editor = mPrefs3.edit();
             editor.putBoolean(welcomeScreenShownPref3, true);
             editor.commit(); // Very important to save the preference
