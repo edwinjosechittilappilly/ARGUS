@@ -18,37 +18,39 @@
         android:id="@+id/button1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:text="Next"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:text="Previous page"
+        android:textSize="25sp" />
 
 
 </LinearLayout>
