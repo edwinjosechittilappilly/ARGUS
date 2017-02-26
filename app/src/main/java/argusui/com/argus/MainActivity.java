@@ -218,7 +218,8 @@ public class MainActivity extends AppCompatActivity {
                 if (f[5] == 1) {
                     //stt
 
-                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                    MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.beta);
+                    mp.start();
                     //
                 } else if (f[5] == 2) {
                     f[5] = 0;
